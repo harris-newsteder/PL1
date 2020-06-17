@@ -1,0 +1,3 @@
+[submodule "pcb/lib/news-kicad-lib"]
+	path = pcb/lib/news-kicad-lib
+	url = https://github.com/newsteder/news-kicad-lib
