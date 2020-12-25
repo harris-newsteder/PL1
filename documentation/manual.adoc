@@ -1,0 +1,46 @@
+= PL1-0 User Manual
+:author: Harris Newsteder
+:email: harris@newsteder.com
+:toc:
+
+== Pin Descriptions
+
+
+== Electrical Specifications
+
+== Theory of Operations
+Each channel operates independently.
+The input signal of each channel is routed to two analog voltage comparators.
+One comparator checks whether the input signal is above 3V (PNP signal).
+The other checks whether the input signal is below 1.5V (NPN signal).
+The output from both comparators is routed to an analog voltage switch which is directly controlled by the physical DIP switch located on the board.
+In this way, the output from either the PNP comparator or the NPN comparator is monitored.
+After the analog switch, the signal passes through a 1mS RC debounce filter and then continues to the isolation chip.
+The isolation chip not only provides galvanic isolation but also hysteresis for the input signal.
+
+== Device Description
+
+=== Overview
+The PL1-0 is an 8-channel sensor interface board.
+It allows you to safely connect your 3.3 or 5V microcontroller to both sourcing (PNP) and sinking (NPN) sensors running at up to 30V.
+
+// Figure 3
+
+Each of the 8 channels have 1 input and 1 output.
+The input pin is connected to the signal line from a sensor or other switching device.
+The output pin is connected to a digital I/O pin on a microcontroller.
+
+The PL1-0 shifts, debounes, and isolated the high-voltage signal from the sensor allowing it to be read by a low-voltage device such as an Arduino or Raspberry Pi.
+
+=== Power Input
+The PL1-0 requires power on both sides of the electrical isolation barrier.
+
+The field-side power requires +5V. The gorund connection for the field-side poewr MUST be common to the ground used by the sensors.
+
+=== Input Connections
+
+=== Output Connections
+
+=== Input Mode Selection
+
+== Example Applications
